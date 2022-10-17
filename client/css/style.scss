@@ -1,0 +1,30 @@
+/*Default font*/
+$fontFamaly: "Roboto";
+
+$minWidth: 320px;
+$maxWidth: 1400;
+$maxWidthContainer: 1140;
+
+/*Colors*/
+$grey1: #868b8f;
+$grey2: #e3eef0;
+$dark1: rgba(48, 90, 131, 0.25);
+
+@import "basic";
+
+body{
+    font-family: $fontFamaly, sans-serif;
+    @include adaptiv-font(18, 16, 1);
+    color: $grey1;
+    background-color: white;
+}
+
+.preload * {
+    transition: none !important;
+}
+
+.container{
+    max-width: $maxWidthContainer + px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
