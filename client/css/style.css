@@ -354,6 +354,11 @@ a {
   color: inherit;
 }
 
+address {
+  font-style: normal !important;
+  display: inline-block;
+}
+
 ul {
   list-style-type: none;
 }
