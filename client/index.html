@@ -8,6 +8,85 @@
     <title>Главная</title>
 </head>
 <body class="preload">
+    <main>
+        <section class="search">
+            <div class="container">
+                <form class="search__form" name="search-form" action="#" method="get">
+                    <input id="name-input" type="text" name="name-input" class="search__form-input" autocomplete="off" value=""/>
+                    <button type="submit" class="search__form-btn" aria-label="Поиск пользователя">
+                        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.7419 10.344C12.7102 9.02267 13.1439 7.38447 12.9562 5.75713C12.7685 4.12979 11.9733 2.63332 10.7297 1.56711C9.48604 0.500899 7.88567 -0.056418 6.24876 0.00665514C4.61184 0.0697283 3.05911 0.748541 1.90119 1.90729C0.743273 3.06603 0.0655718 4.61925 0.00366997 6.25621C-0.0582319 7.89317 0.500231 9.49314 1.56733 10.736C2.63443 11.9789 4.13147 12.773 5.75894 12.9596C7.38641 13.1461 9.0243 12.7112 10.3449 11.742H10.3439C10.3739 11.782 10.4059 11.82 10.4419 11.857L14.2919 15.707C14.4794 15.8946 14.7338 16.0001 14.9991 16.0002C15.2643 16.0003 15.5188 15.895 15.7064 15.7075C15.8941 15.52 15.9995 15.2656 15.9996 15.0003C15.9997 14.7351 15.8944 14.4806 15.7069 14.293L11.8569 10.443C11.8212 10.4068 11.7827 10.3734 11.7419 10.343V10.344ZM11.9999 6.49998C11.9999 7.22225 11.8577 7.93745 11.5813 8.60474C11.3049 9.27203 10.8997 9.87834 10.389 10.3891C9.87829 10.8998 9.27197 11.3049 8.60468 11.5813C7.93739 11.8577 7.22219 12 6.49992 12C5.77765 12 5.06245 11.8577 4.39516 11.5813C3.72787 11.3049 3.12156 10.8998 2.61083 10.3891C2.10011 9.87834 1.69498 9.27203 1.41858 8.60474C1.14218 7.93745 0.999921 7.22225 0.999921 6.49998C0.999921 5.04129 1.57938 3.64234 2.61083 2.61089C3.64228 1.57944 5.04123 0.999979 6.49992 0.999979C7.95861 0.999979 9.35756 1.57944 10.389 2.61089C11.4205 3.64234 11.9999 5.04129 11.9999 6.49998V6.49998Z" fill="#B44CCF"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="cards">
+            <div class="container">
+                <div class="cards__inner">
+                    <p class="cards__message">Список пуст</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="pop-up" role="alert" id="pop-up-info-card">
+    <div class="pop-up__container">
+        <button type="button" class="pop-up__btn-close" aria-label="Закрыть всплывающее окно"></button>
+        <h3 class="pop-up__title"></h2>
+        <table class="pop-up__info info-pop-up">
+            <tr>
+                <td class="info-pop-up__label">Телефон:</td>
+                <td class="info-pop-up__value info-pop-up__value--phone"></td>
+            </tr>
+            <tr>
+                <td class="info-pop-up__label">Почта:</td>
+                <td class="info-pop-up__value info-pop-up__value--mail"></td>
+            </tr>
+            <tr>
+                <td class="info-pop-up__label">Дата приема:</td>
+                <td class="info-pop-up__value info-pop-up__value--hire-date"></td>
+            </tr>
+            <tr>
+                <td class="info-pop-up__label">Должность:</td>
+                <td class="info-pop-up__value info-pop-up__value--position"></td>
+            </tr>
+            <tr>
+                <td class="info-pop-up__label">Подразделение:</td>
+                <td class="info-pop-up__value info-pop-up__value--department"></td>
+            </tr>
+        </table>
+        <h4 class="pop-up__subtitle">Дополнительная информация:</h4>
+        <p class="pop-up__additional">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Адрес: <address class="pop-up__value--address"></address></p>
+    </div>
+    </div>
+    <template id="card-template" class="card-template">
+        <li class="card-item">
+            <article class="card">
+                <a href="#pop-up-info-card" class="card__btn" aria-controls="pop-up-info-card" aria-expanded="false" aria-haspopup="true">
+                    <h3 class="card__title"></h3>
+                    <ul class="card__info">
+                        <li class="card__info-item item-info-card">
+                            <div class="item-info-card__img">
+                                <svg class="item-info-card__phone-icon" aria-hidden="true" width="296" height="490" viewBox="0 0 296 490" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M295.15 451.4V38C295.15 17.1 278.15 0 257.15 0H38.3501C17.4501 0 0.350098 17 0.350098 38V451.5C0.350098 472.4 17.3501 489.5 38.3501 489.5H257.15C278.05 489.4 295.15 472.4 295.15 451.4ZM24.8501 88.1H270.55V366.3H24.8501V88.1V88.1ZM38.3501 24.5H257.15C264.55 24.5 270.65 30.5 270.65 38V63.6H24.8501V38C24.8501 30.5 30.9501 24.5 38.3501 24.5ZM24.8501 451.4V390.7H270.55V451.4C270.55 458.8 264.55 464.9 257.05 464.9H38.3501C30.9501 464.9 24.8501 458.9 24.8501 451.4Z" fill="#B44CCF"/>
+                                    <path d="M172.55 416.6H122.85C116.05 416.6 110.55 422.1 110.55 428.9C110.55 435.7 116.05 441.2 122.85 441.2H172.55C179.35 441.2 184.85 435.7 184.85 428.9C184.85 422.1 179.35 416.6 172.55 416.6Z" fill="#B44CCF"/>
+                                </svg>
+                            </div>
+                            <span class="item-info-card__phone"></span>
+                        </li>
+                        <li class="card__info-item item-info-card">
+                            <div class="item-info-card__img">
+                                <svg class="item-info-card__mail-icon" aria-hidden="true" width="474" height="474" viewBox="0 0 474 474" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M437.5 59.3H36.5C16.4 59.3 0 75.7001 0 95.8001V378.2C0 398.3 16.4 414.7 36.5 414.7H437.5C457.6 414.7 474 398.3 474 378.2V95.8001C474 75.7001 457.6 59.3 437.5 59.3ZM432.2 86.3001L239.5 251.1L46.8 86.3001H432.2ZM447 378.2C447 383.4 442.7 387.7 437.5 387.7H36.5C31.3 387.7 27 383.4 27 378.2V104.9L230.7 279.1C230.8 279.2 231 279.3 231.1 279.4C231.2 279.5 231.4 279.6 231.5 279.7C231.8 279.9 232 280.1 232.3 280.2C232.4 280.3 232.5 280.3 232.6 280.4C233 280.6 233.4 280.8 233.8 281C233.9 281 234 281.1 234.1 281.1C234.4 281.2 234.7 281.4 235.1 281.5C235.2 281.5 235.4 281.6 235.5 281.6C235.8 281.7 236.1 281.8 236.4 281.8C236.5 281.8 236.7 281.9 236.8 281.9C237.1 282 237.5 282 237.8 282.1C237.9 282.1 238 282.1 238.1 282.1C238.5 282.1 239 282.2 239.4 282.2C239.8 282.2 240.3 282.2 240.7 282.1C240.8 282.1 240.9 282.1 241 282.1C241.3 282.1 241.7 282 242 281.9C242.1 281.9 242.3 281.8 242.4 281.8C242.7 281.7 243 281.6 243.3 281.6C243.4 281.6 243.6 281.5 243.7 281.5C244 281.4 244.3 281.3 244.7 281.1C244.8 281.1 244.9 281 245 281C245.4 280.8 245.8 280.6 246.2 280.4C246.3 280.3 246.4 280.3 246.5 280.2C246.8 280 247 279.9 247.3 279.7C247.4 279.6 247.6 279.5 247.7 279.4C247.8 279.3 248 279.2 248.1 279.1L447 109.2V378.2Z" fill="#B44CCF"/>
+                                </svg>
+                            </div>
+                            <span class="item-info-card__mail"></span>
+                        </li>
+                    </ul>
+                </a>
+            </article>
+        </li>
+    </template>
     <script src="js/main.js"></script>
 </body>
 </html>
