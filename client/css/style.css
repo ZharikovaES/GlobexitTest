@@ -401,4 +401,139 @@ body {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.search {
+  padding: 3em 0;
+  width: 100%;
+}
+@media screen and (max-width: 900px) {
+  .search {
+    padding: 1em 0;
+  }
+}
+.search__form {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e3eef0;
+  padding: 0.5em 1.5em 0.5em 1em;
+  border-radius: 30px;
+}
+.search__form-input {
+  display: block;
+  flex: 1 1 auto;
+  padding-right: 1em;
+}
+.search__form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search__form-btn svg {
+  width: 35px;
+  height: 35px;
+}
+@media screen and (max-width: 500px) {
+  .search__form-btn svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 2%;
+       column-gap: 2%;
+  row-gap: 2vh;
+}
+.cards__wrapper-message {
+  height: 40vh;
+  position: relative;
+}
+.cards__message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.card-item {
+  border-radius: 18px;
+  max-width: 32%;
+  flex: 0 1 32%;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 3;
+  background-color: white;
+}
+@media screen and (max-width: 900px) {
+  .card-item {
+    max-width: 49%;
+    flex: 0 1 49%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .card-item {
+    max-width: 100%;
+    flex: 0 1 100%;
+  }
+}
+.card-item::before {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.05);
+  border-radius: 18px;
+  transition: all 0.4s;
+}
+.card-item:hover::before {
+  box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.098);
+}
+.card-item:active::before {
+  box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.2);
+}
+
+.card__btn {
+  position: relative;
+  z-index: 4;
+  padding: 2em 1em;
+  width: 100%;
+  min-height: 28vh;
+}
+.card__title {
+  color: black;
+  padding-bottom: 2em;
+}
+@media screen and (max-width: 900px) {
+  .card__title {
+    padding-bottom: 1em;
+  }
+}
+.card__info-item + .card__info-item {
+  margin-top: 0.5em;
+}
+
+.item-info-card {
+  display: flex;
+}
+.item-info-card:first-child svg {
+  transform: translateX(-4px);
+}
+.item-info-card__img {
+  padding-right: 1em;
+  text-align: left;
+}
+.item-info-card__img svg {
+  width: 20px;
+  height: 20px;
+}
+.item-info-card__mail {
+  word-break: break-all;
 }/*# sourceMappingURL=style.css.map */

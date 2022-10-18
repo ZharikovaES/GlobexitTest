@@ -67,7 +67,7 @@ function ready() {
     
                     cardsList.append(card);
                 });
-                cardsList.style.display = "block";
+                cardsList.style.display = null;
                 cardsMessage.style.display = "none";
             } else showMessage("Список пуст");
         }
@@ -90,7 +90,7 @@ function ready() {
 
 window.addEventListener("DOMContentLoaded", ready);
 
-document.addEventListener("load", () => {
+window.addEventListener("load", () => {
     document.body.classList.remove("preload");
 });
 

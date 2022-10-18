@@ -29,3 +29,172 @@ body{
     margin: 0 auto;
     padding: 0 15px;
 }
+
+.search {
+    padding: 3em 0;
+    width: 100%;
+
+    @media screen and (max-width: 900px) {
+        padding: 1em 0;
+    }
+    &__form {
+        display: flex;
+        align-items: center;
+        border: 1px solid $grey2;
+        padding: .5em 1.5em .5em 1em;
+        border-radius: 30px;
+
+        &-input {
+            display: block;
+            flex: 1 1 auto;
+            padding-right: 1em;
+        }
+        &-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg{
+                width: 35px;
+                height: 35px;
+
+                @media screen and (max-width: 500px) {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+}
+.cards {
+    &__inner {
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2%;
+        row-gap: 2vh;
+    }
+    &__wrapper-message {
+        height: 40vh;
+        position: relative;
+    }
+    &__message {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+}
+.pop-up {
+    &__container {}
+    &__btn-close {}
+    &__title {}
+    &__info {}
+    &__subtitle {}
+    &__additional {}
+    &__value--address {}
+}
+.info-pop-up {
+    &__label {}
+    &__value {
+
+        &--phone {}
+        &--mail {}
+        &--hire-date {}
+        &--position {}
+        &--department {}
+    }
+}
+.card-item {
+    border-radius: 18px;
+    max-width: 32%;
+    flex: 0 1 32%;
+    transition: all .4s;
+    position: relative;
+    z-index: 3;
+    background-color: white;
+
+    @media screen and (max-width: 900px) {
+        max-width: 49%;
+        flex: 0 1 49%;
+    }
+    @media screen and (max-width: 500px) {
+        max-width: 100%;
+        flex: 0 1 100%;
+    }
+    
+    &::before{
+        content: "";
+        position: absolute;
+        display: block;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.05);        border-radius: 18px;
+        transition: all .4s;
+    }
+
+    &:hover::before {
+        box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.098);
+    }
+    &:active::before {
+        box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.2);
+    }
+}
+.card {
+    &__btn {
+        position: relative;
+        z-index: 4;
+        padding: 2em 1em;
+        width: 100%;
+        min-height: 28vh;
+    }
+    &__title {
+        color: black;
+        padding-bottom: 2em;
+
+        @media screen and (max-width: 900px) {
+            padding-bottom: 1em;
+        }
+    }
+    &__info {
+        
+        &-item {
+            
+            & + & {
+                margin-top: .5em;
+            }
+        }
+    }
+}
+.item-info-card {
+    display: flex;
+
+    &:first-child{
+        svg {
+            transform: translateX(-4px);
+        }
+    }
+
+    &__img {
+        padding-right: 1em;
+        text-align: left;
+
+        svg{
+            width: 20px;
+            height: 20px;
+            
+        }
+    }
+    &__phone {
+
+        &-icon {}
+    }
+    &__mail {
+        word-break: break-all;
+        &-icon {}
+    }
+}
