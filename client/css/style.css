@@ -440,6 +440,9 @@ body {
   }
 }
 
+.cards {
+  padding-bottom: 1em;
+}
 .cards__list {
   display: flex;
   flex-wrap: wrap;
@@ -450,6 +453,7 @@ body {
 .cards__wrapper-message {
   height: 40vh;
   position: relative;
+  display: none;
 }
 .cards__message {
   position: absolute;
@@ -459,6 +463,101 @@ body {
   text-align: center;
 }
 
+.pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  transition: visibility 0.2s, opacity 0.2s ease-in;
+  visibility: hidden;
+  opacity: 0;
+}
+.pop-up:target {
+  visibility: visible;
+  opacity: 1;
+}
+.pop-up__wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(44, 85, 127, 0.25);
+}
+.pop-up__container {
+  width: 45%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 25px;
+  padding: 0.5em 1.5em 2em;
+}
+.pop-up__btn-close {
+  display: block;
+  color: white;
+  border-radius: 50%;
+  width: 3.7em;
+  height: 3.7em;
+  font-size: 12px;
+  background-color: #B44CCF;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-2.5em);
+  line-height: 3.5em;
+  text-align: center;
+}
+.pop-up__title {
+  font-size: 28px;
+  color: black;
+  margin-bottom: 1.8em;
+  font-weight: 700;
+}
+@media (max-width: 1140px) {
+  .pop-up__title {
+    font-size: calc(26px + 2 * ((100vw - 320px) / 820));
+  }
+}
+.pop-up__info {
+  margin-bottom: 2em;
+}
+.pop-up__subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 0.4em;
+}
+@media (max-width: 1140px) {
+  .pop-up__subtitle {
+    font-size: calc(18px + 2 * ((100vw - 320px) / 820));
+  }
+}
+.info-pop-up {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.info-pop-up__label {
+  width: 40%;
+  color: black;
+  font-weight: 500;
+  line-height: 2;
+}
+.info-pop-up__value {
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info-pop-up__value--phone {
+  text-decoration: underline;
+}
+.info-pop-up__value--mail {
+  text-decoration: underline;
+}
 .card-item {
   border-radius: 18px;
   max-width: 32%;
@@ -536,4 +635,5 @@ body {
 }
 .item-info-card__mail {
   word-break: break-all;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

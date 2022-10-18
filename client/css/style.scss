@@ -66,6 +66,8 @@ body{
     }
 }
 .cards {
+    padding-bottom: 1em;
+
     &__inner {
     }
     &__list {
@@ -77,6 +79,7 @@ body{
     &__wrapper-message {
         height: 40vh;
         position: relative;
+        display: none;
     }
     &__message {
         position: absolute;
@@ -87,20 +90,95 @@ body{
     }
 }
 .pop-up {
-    &__container {}
-    &__btn-close {}
-    &__title {}
-    &__info {}
-    &__subtitle {}
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    transition: visibility 0.2s, opacity 0.2s ease-in;
+    visibility: hidden;
+    opacity: 0;
+
+    &:target {
+       visibility: visible;
+       opacity: 1;
+    }
+
+    &__wrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(44, 85, 127, 0.25);
+    }
+    &__container {
+        width: 45%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 25px;
+        padding: .5em 1.5em 2em;
+    }
+
+    &__btn-close {
+        display: block;
+        color: white;
+        border-radius: 50%;
+        width: 3.7em;
+        height: 3.7em;
+        font-size: 12px;
+        background-color: $violet;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateY(-2.5em);
+        line-height: 3.5em;
+        text-align: center
+    }
+    &__title {
+        @include adaptiv-font(28, 26, 1);
+        color: black;
+        margin-bottom: 1.8em;
+        font-weight: 700;
+    }
+    &__info {
+        margin-bottom: 2em;
+    }
+    &__subtitle {
+        @include adaptiv-font(20, 18, 1);
+        font-weight: 500;
+        color: black;
+        margin-bottom: .4em;
+    }
     &__additional {}
     &__value--address {}
 }
 .info-pop-up {
-    &__label {}
-    &__value {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
 
-        &--phone {}
-        &--mail {}
+    &__label {
+        width: 40%;
+        color: black;
+        font-weight: 500;
+        line-height: 2;
+    }
+    &__value {
+        width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &--phone {
+            text-decoration: underline;
+        }
+        &--mail {
+            text-decoration: underline;
+        }
         &--hire-date {}
         &--position {}
         &--department {}
@@ -133,7 +211,8 @@ body{
         left: 0;
         width: 100%;
         height: 100%;
-        box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.05);        border-radius: 18px;
+        box-shadow: 0px 20px 30px 15px rgba(111, 103, 129, 0.05);
+        border-radius: 18px;
         transition: all .4s;
     }
 
@@ -161,9 +240,7 @@ body{
         }
     }
     &__info {
-        
         &-item {
-            
             & + & {
                 margin-top: .5em;
             }
@@ -190,11 +267,11 @@ body{
         }
     }
     &__phone {
-
         &-icon {}
     }
     &__mail {
         word-break: break-all;
+        text-decoration: underline;
         &-icon {}
     }
 }

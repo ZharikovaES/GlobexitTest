@@ -2,8 +2,11 @@ function ready() {
     const URL_API = "http://127.0.0.1:3000";
 
     const cardTemplate = document.querySelector("#card-template");
+    const cardsMessageWrapper = document.querySelector(".cards__wrapper-message");
     const cardsMessage = document.querySelector(".cards__message");
     const popUpOfCard = document.querySelector("#pop-up-info-card");
+    const popUpWrapper = popUpOfCard.querySelector(".pop-up__wrapper");
+    const popUpBtnClose = popUpOfCard.querySelector(".pop-up__btn-close");
     const titlePopUpOfCard = popUpOfCard.querySelector(".pop-up__title");
     const phonePopUpOfCard = popUpOfCard.querySelector(".info-pop-up__value--phone");
     const mailPopUpOfCard = popUpOfCard.querySelector(".info-pop-up__value--mail");
@@ -41,11 +44,17 @@ function ready() {
             });
             
     });
+
+    // возвращение скролла у body при закрытии pop-up-а
+    [popUpWrapper, popUpBtnClose].forEach(el => {
+        el.addEventListener("click", () => {
+            document.body.style.overflow = null;
+        });
+    });
     
     //размещение данных в DOM
     function setUsersToCards(data) {
         if (Array.isArray(data)) {
-            console.log(data);
             if (data.length) {
                 cardsList.innerHTML = "";
                 data.forEach(el => {
@@ -55,7 +64,12 @@ function ready() {
                     card.querySelector(".item-info-card__mail").innerText = el.email;
                     const btnOfCard = card.querySelector(".card__btn");
                     
+                    //обработка события нажатия на карточку
                     btnOfCard.addEventListener("click", function(e){
+                        const body = document.body;
+                        if (body.style.overflow) body.style.overflow = null;
+                        else body.style.overflow = "hidden";
+
                         titlePopUpOfCard.innerText = el.name; 
                         phonePopUpOfCard.innerText = el.phone;
                         mailPopUpOfCard.innerText = el.email;
@@ -68,7 +82,7 @@ function ready() {
                     cardsList.append(card);
                 });
                 cardsList.style.display = null;
-                cardsMessage.style.display = "none";
+                cardsMessageWrapper.style.display = "none";
             } else showMessage("Список пуст");
         }
     }
@@ -83,7 +97,7 @@ function ready() {
     function showMessage(message) {
         cardsList.innerHTML = "";
         cardsList.style.display = "none";
-        cardsMessage.style.display = "block";
+        cardsMessageWrapper.style.display = "block";
         cardsMessage.innerText = message;
     }
 }
