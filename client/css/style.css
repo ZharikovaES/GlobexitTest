@@ -355,7 +355,7 @@ a {
 }
 
 address {
-  font-style: normal !important;
+  font-style: normal;
   display: inline-block;
 }
 
