@@ -33,9 +33,9 @@
         </section>
     </main>
     <div class="pop-up" role="alert" id="pop-up-info-card">
-        <a href="#" class="pop-up__wrapper"></a>
+        <div href="#" class="pop-up__wrapper"></div>
         <div class="pop-up__container">
-            <a href="#" role="button" class="pop-up__btn-close" aria-label="Закрыть всплывающее окно">&#9587;</a>
+            <button type="button" class="pop-up__btn-close" aria-label="Закрыть всплывающее окно">&#9587;</button>
             <h3 class="pop-up__title"></h2>
             <table class="pop-up__info info-pop-up">
                 <tr>
@@ -66,7 +66,7 @@
     <template id="card-template" class="card-template">
         <li class="card-item">
             <article class="card">
-                <a href="#pop-up-info-card" class="card__btn" aria-controls="pop-up-info-card" aria-expanded="false" aria-haspopup="true">
+                <div role="button" class="card__btn" aria-controls="pop-up-info-card" aria-expanded="false" aria-haspopup="true">
                     <h3 class="card__title"></h3>
                     <ul class="card__info">
                         <li class="card__info-item item-info-card">
@@ -87,7 +87,7 @@
                             <span class="item-info-card__mail"></span>
                         </li>
                     </ul>
-                </a>
+                </div>
             </article>
         </li>
     </template>

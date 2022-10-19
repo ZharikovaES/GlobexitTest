@@ -48,7 +48,9 @@ function ready() {
     // возвращение скролла у body при закрытии pop-up-а
     [popUpWrapper, popUpBtnClose].forEach(el => {
         el.addEventListener("click", () => {
-            document.body.style.overflow = null;
+            document.body.style.overflow = popUpOfCard.style.visibility = popUpOfCard.style.opacity = null;
+            const openCard = document.querySelector('.card__btn[aria-expanded="true"]');
+            openCard.setAttribute("aria-expanded", false);   
         });
     });
     
@@ -67,8 +69,10 @@ function ready() {
                     //обработка события нажатия на карточку
                     btnOfCard.addEventListener("click", function(e){
                         const body = document.body;
-                        if (body.style.overflow) body.style.overflow = null;
-                        else body.style.overflow = "hidden";
+                        if (body) body.style.overflow = "hidden";
+                        popUpOfCard.style.visibility = "visible";
+                        popUpOfCard.style.opacity = 1;     
+                        this.setAttribute("aria-expanded", true);   
 
                         titlePopUpOfCard.innerText = el.name; 
                         phonePopUpOfCard.innerText = el.phone;

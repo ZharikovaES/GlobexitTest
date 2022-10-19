@@ -100,11 +100,6 @@ body{
     visibility: hidden;
     opacity: 0;
 
-    &:target {
-       visibility: visible;
-       opacity: 1;
-    }
-
     &__wrapper{
         position: absolute;
         top: 0;
@@ -112,6 +107,7 @@ body{
         right: 0;
         bottom: 0;
         background-color: rgba(44, 85, 127, 0.25);
+        cursor: pointer;
     }
     &__container {
         width: 45%;
@@ -122,6 +118,10 @@ body{
         background-color: white;
         border-radius: 25px;
         padding: .5em 1.5em 2em;
+
+        @media screen and (max-width: 1000px) {
+            width: 90%;
+        }
     }
 
     &__btn-close {
@@ -160,6 +160,11 @@ body{
     display: table;
     table-layout: fixed;
     width: 100%;
+
+    @media screen and (max-width: 1000px) {
+        display: block;
+        overflow: auto;
+    }
 
     &__label {
         width: 40%;
@@ -230,6 +235,7 @@ body{
         padding: 2em 1em;
         width: 100%;
         min-height: 28vh;
+        cursor: pointer;
     }
     &__title {
         color: black;

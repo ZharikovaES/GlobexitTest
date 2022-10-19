@@ -474,10 +474,6 @@ body {
   visibility: hidden;
   opacity: 0;
 }
-.pop-up:target {
-  visibility: visible;
-  opacity: 1;
-}
 .pop-up__wrapper {
   position: absolute;
   top: 0;
@@ -485,6 +481,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(44, 85, 127, 0.25);
+  cursor: pointer;
 }
 .pop-up__container {
   width: 45%;
@@ -495,6 +492,11 @@ body {
   background-color: white;
   border-radius: 25px;
   padding: 0.5em 1.5em 2em;
+}
+@media screen and (max-width: 1000px) {
+  .pop-up__container {
+    width: 90%;
+  }
 }
 .pop-up__btn-close {
   display: block;
@@ -539,6 +541,12 @@ body {
   display: table;
   table-layout: fixed;
   width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .info-pop-up {
+    display: block;
+    overflow: auto;
+  }
 }
 .info-pop-up__label {
   width: 40%;
@@ -605,6 +613,7 @@ body {
   padding: 2em 1em;
   width: 100%;
   min-height: 28vh;
+  cursor: pointer;
 }
 .card__title {
   color: black;
